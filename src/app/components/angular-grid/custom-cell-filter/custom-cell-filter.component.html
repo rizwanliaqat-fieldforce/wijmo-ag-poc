@@ -1,0 +1,34 @@
+Ag agrid with custom filter and cell renderers 
+<br/>
+
+<div class="test-header">
+  Select columns to show then hit 'Apply'
+</div>
+
+<div class="test-header">
+  <label><input type="checkbox" id="make" />Make</label>
+  <label><input type="checkbox" id="model" />Model</label>
+  <label><input type="checkbox" id="price" />Price</label>
+
+  <button (click)="onBtApply($event)">Apply</button>
+</div>
+
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<br/>
+
+
+<ag-grid-angular
+#agGrid
+  style="width: 800px; height: 500px;"
+  class="ag-theme-balham-dark"
+  [modules]="modules"
+  rowSelection="multiple"
+  [defaultColDef]="defaultColDef"
+  [columnDefs]="columnDefs"
+  [animateRows]="true"
+  [pagination]="true"
+  [rowData]="rowData"
+  [frameworkComponents]="frameworkComponents"
+  (gridReady)="onGridReady($event)"
+>
+</ag-grid-angular>
