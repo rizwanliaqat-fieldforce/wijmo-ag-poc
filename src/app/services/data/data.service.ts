@@ -37,20 +37,20 @@ function sortAndFilter(allOfTheData, sortModel, filterModel) {
   return sortData(sortModel, filterData(filterModel, allOfTheData));
 }
 function sortData(sortModel, data) {
-  var sortPresent = sortModel && sortModel.length > 0;
+  let sortPresent = sortModel && sortModel.length > 0;
   if (!sortPresent) {
     return data;
   }
-  var resultOfSort = data.slice();
+  let resultOfSort = data.slice();
   resultOfSort.sort(function(a, b) {
-    for (var k = 0; k < sortModel.length; k++) {
-      var sortColModel = sortModel[k];
-      var valueA = a[sortColModel.colId];
-      var valueB = b[sortColModel.colId];
+    for (let k = 0; k < sortModel.length; k++) {
+      let sortColModel = sortModel[k];
+      let valueA = a[sortColModel.colId];
+      let valueB = b[sortColModel.colId];
       if (valueA == valueB) {
         continue;
       }
-      var sortDirection = sortColModel.sort === "asc" ? 1 : -1;
+      let sortDirection = sortColModel.sort === "asc" ? 1 : -1;
       if (valueA > valueB) {
         return sortDirection;
       } else {
@@ -62,16 +62,16 @@ function sortData(sortModel, data) {
   return resultOfSort;
 }
 function filterData(filterModel, data) {
-  var filterPresent = filterModel && Object.keys(filterModel).length > 0;
+  let filterPresent = filterModel && Object.keys(filterModel).length > 0;
   if (!filterPresent) {
     return data;
   }
-  var resultOfFilter = [];
-  for (var i = 0; i < data.length; i++) {
-    var item = data[i];
+  let resultOfFilter = [];
+  for (let i = 0; i < data.length; i++) {
+    let item = data[i];
     if (filterModel.age) {
-      var age = item.age;
-      var allowedAge = parseInt(filterModel.age.filter);
+      let age = item.age;
+      let allowedAge = parseInt(filterModel.age.filter);
       if (filterModel.age.type == "equals") {
         if (age !== allowedAge) {
           continue;

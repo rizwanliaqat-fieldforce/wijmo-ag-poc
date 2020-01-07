@@ -8,6 +8,7 @@ import { PaginatedGridComponent } from './components/angular-grid/paginated-grid
 import { ServerSortFilterComponent } from './components/angular-grid/server-sort-filter/server-sort-filter.component';
 import { AgDemoGridComponent } from './components/angular-grid/ag-demo-grid/ag-demo-grid.component';
 import { SelectableCheckboxComponent } from './components/wijmo-grid/selectable-checkbox.component/selectable-checkbox.component';
+import { CustomServerSideWijmoGridComponent } from './components/wijmo-grid/customized-server-side-wijmo/customized-server-side-wijmo.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'angular-grid-paginate', component: PaginatedGridComponent },
   { path: 'angular-grid-remote', component: ServerSortFilterComponent },
   { path: 'wijmo-grid-basic', component: WijmoGridComponent },
+  { path: 'wijmo-grid-server-side', component: CustomServerSideWijmoGridComponent },
   { path: 'wijmo-grid-checkbox', component: SelectableCheckboxComponent },
   { path: '**', component: WijmoGridComponent },
 ];

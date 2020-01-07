@@ -1,0 +1,33 @@
+
+  Customized Server Side Wijmo Grid
+
+  <div class="test-header">
+    <label><input type="checkbox" id="athlete" />Athlete</label>
+    <label><input type="checkbox" id="age" />Age</label>
+    <label><input type="checkbox" id="country" />Country</label>
+    <label><input type="checkbox" id="year" />Year</label>
+    <label><input type="checkbox" id="sport" />Sport</label>
+
+    <label><input type="checkbox" id="gold" />Gold</label>
+    <label><input type="checkbox" id="silver" />Silver</label>
+    <label><input type="checkbox" id="bronze" />Bronze</label>
+
+    <button (click)="onBtApply($event)">Apply</button>
+  </div>
+  
+  <wj-flex-grid #flex
+  [(itemsSource)]="rowData"
+  (sortedColumn)="gridSort(flex, $event)"
+  (sortingColumn)="beforeGridSort(flex, $event)"
+  headersVisibility="Column"
+  >
+  <wj-flex-grid-filter #filter></wj-flex-grid-filter>
+  <wj-flex-grid-column *ngFor="let col of colums.items" [binding]="col">
+  </wj-flex-grid-column>
+</wj-flex-grid>
+
+<wj-collection-view-navigator
+        headerFormat="Page {currentPage:n0} of {pageCount:n0}"
+        [byPage]="true"
+        [cv]="rowData">
+    </wj-collection-view-navigator>

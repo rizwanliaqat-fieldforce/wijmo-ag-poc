@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/data/data.service';
 @Component({
   selector: "ag-demo-grid",
   template: `
+  Ag grid with Server Side sorting, filtering and pagination
   <div class="test-header">
         Select columns to show then hit 'Apply'
       </div>
