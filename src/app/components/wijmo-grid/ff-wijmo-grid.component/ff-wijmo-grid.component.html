@@ -1,0 +1,16 @@
+<wj-flex-grid #grid
+[(itemsSource)]="dataSource"
+headersVisibility="Column"
+>
+<wj-flex-grid-filter #filter></wj-flex-grid-filter>
+<wj-flex-grid-column *ngFor="let col of colums.items" [header]="col.header" [binding]="col.binding" (initialized)="gridReady(grid, $event)" [allowSorting]="col.allowSorting">
+</wj-flex-grid-column>
+</wj-flex-grid>
+
+<ng-container *ngIf="pagination">
+    <wj-collection-view-navigator
+      headerFormat="Page {currentPage:n0} of {pageCount:n0}"
+      [byPage]="true"
+      [cv]="dataSource">
+  </wj-collection-view-navigator>
+</ng-container>

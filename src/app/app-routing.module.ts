@@ -9,6 +9,7 @@ import { ServerSortFilterComponent } from './components/angular-grid/server-sort
 import { AgDemoGridComponent } from './components/angular-grid/ag-demo-grid/ag-demo-grid.component';
 import { SelectableCheckboxComponent } from './components/wijmo-grid/selectable-checkbox.component/selectable-checkbox.component';
 import { CustomServerSideWijmoGridComponent } from './components/wijmo-grid/customized-server-side-wijmo/customized-server-side-wijmo.component';
+import { WijmoGridDemoComponent } from './components/wijmo-grid/wijmo-grid-demo/wijmo-grid-demo.component';
 
 
 const routes: Routes = [
@@ -19,8 +20,9 @@ const routes: Routes = [
   { path: 'angular-grid-remote', component: ServerSortFilterComponent },
   { path: 'wijmo-grid-basic', component: WijmoGridComponent },
   { path: 'wijmo-grid-server-side', component: CustomServerSideWijmoGridComponent },
-  { path: 'wijmo-grid-checkbox', component: SelectableCheckboxComponent },
-  { path: '**', component: WijmoGridComponent },
+  { path: 'wijmo-grid-checkbox', component: SelectableCheckboxComponent },  
+  { path: 'wijmo-grid-demo', component: WijmoGridDemoComponent },  
+  { path: '**', component: WijmoGridDemoComponent },
 ];
 
 @NgModule({
