@@ -21,8 +21,8 @@ interface ColumDefinition {
 export class FFWijmoGridComponent implements OnInit {
 
     // properties
-    private dataSource: CollectionView;
-    private colums: CollectionView;
+    dataSource: CollectionView;
+    colums: CollectionView;
     // input params
     @Input() rowData: any;
     @Input() columnData: ColumDefinition[];
@@ -55,6 +55,6 @@ export class FFWijmoGridComponent implements OnInit {
     }
 
     gridReady(grid: FlexGrid, e: EventArgs) {
-        console.log("grid has been initialised");
+        console.log("initialized - ff wijmo grid");
     }
 }
