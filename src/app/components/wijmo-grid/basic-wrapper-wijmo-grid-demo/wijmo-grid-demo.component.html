@@ -1,0 +1,11 @@
+<h2>Basic version</h2>
+<ng-container *ngIf="rowData && rowData.length > 0">
+    <ff-wijmo-grid 
+        [rowData]="rowData"  
+        [columnData]="colDefs"
+        [pagination]="true" 
+        [pageSize]="15">
+    </ff-wijmo-grid>
+</ng-container>
+
+

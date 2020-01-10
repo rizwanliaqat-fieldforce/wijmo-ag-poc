@@ -3,15 +3,7 @@ import { Component, OnInit, ViewChild, Input, ViewEncapsulation } from '@angular
 import { CollectionView, EventArgs } from 'wijmo/wijmo';
 import { FlexGridFilter, FilterType } from 'wijmo/wijmo.grid.filter';
 import { FlexGrid } from 'wijmo/wijmo.grid';
-import { analyzeFileForInjectables } from '@angular/compiler';
-
-interface ColumDefinition {
-    header?: string;
-    binding: string;
-    allowSorting?: boolean;
-    allowFilter?: boolean;
-    width?: string;
-}
+import { ColumDefinition } from 'src/app/models/ColumDefinition';
 
 @Component({
     selector: 'ff-wijmo-grid',

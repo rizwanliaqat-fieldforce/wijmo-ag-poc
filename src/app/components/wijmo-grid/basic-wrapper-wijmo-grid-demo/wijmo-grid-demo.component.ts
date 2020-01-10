@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CollectionView, ObservableArray } from 'wijmo/wijmo';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data/data.service';
+import { ColumDefinition } from 'src/app/models/ColumDefinition';
 
 @Component({
     selector: 'wijmo-grid-demo',
@@ -12,45 +12,46 @@ export class WijmoGridDemoComponent implements OnInit {
     rowData: any;
     colDefs: any;
 
-    colDefId = {
+    colDefId: ColumDefinition = {
         header: "ID",
         binding: "id",
         allowSorting: false,
         allowFilter: false
     };
 
-    colDefAthlete = {
+    colDefAthlete: ColumDefinition  = {
         header: "Athlete",
         binding: "athlete",
         allowSorting: true,
         allowFilter: true
     };
 
-    colDefAge = {
+    colDefAge: ColumDefinition  = {
         header: "Age",
         binding: "age",
         allowSorting: true,
         allowFilter: true
     };
 
-    colDefCountry = {
+    colDefCountry: ColumDefinition  = {
         header: "Country",
         binding: "country",
         allowSorting: true,
         allowFilter: true
     };
 
-    colDefYear = {
+    colDefYear: ColumDefinition  = {
         header: "Year",
         binding: "year",
+        format: 'f0',
         allowSorting: true,
         allowFilter: true
     };
 
-    colDefSport = { header: "Sport", binding: "sport" };
-    colDefGold = { header: "Gold", binding: "gold" };
-    colDefSilver = { header: "Silver", binding: "silver" };
-    colDefBronze = { header: "Bronze", binding: "bronze" };
+    colDefSport: ColumDefinition  = { header: "Sport", binding: "sport" };
+    colDefGold: ColumDefinition  = { header: "Gold", binding: "gold" };
+    colDefSilver: ColumDefinition  = { header: "Silver", binding: "silver" };
+    colDefBronze: ColumDefinition  = { header: "Bronze", binding: "bronze" };
 
     constructor(private dataService: DataService) {
         this.colDefs = [

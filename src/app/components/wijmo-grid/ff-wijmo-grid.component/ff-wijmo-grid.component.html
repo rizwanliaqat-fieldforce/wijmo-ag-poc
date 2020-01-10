@@ -4,7 +4,8 @@
 headersVisibility="Column"
 >
 <wj-flex-grid-filter #filter></wj-flex-grid-filter>
-<wj-flex-grid-column *ngFor="let col of colums.items" [header]="col.header" [binding]="col.binding" [allowSorting]="col.allowSorting">
+<wj-flex-grid-column *ngFor="let col of colums.items" [header]="col.header" [binding]="col.binding"
+  [allowSorting]="col.allowSorting" [format]="col.format">
 </wj-flex-grid-column>
 </wj-flex-grid>
 

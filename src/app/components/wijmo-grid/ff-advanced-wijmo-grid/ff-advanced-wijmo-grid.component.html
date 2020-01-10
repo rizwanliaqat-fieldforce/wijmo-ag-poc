@@ -1,0 +1,25 @@
+<wj-flex-grid #grid [(itemsSource)]="dataSource" (initialized)="gridReady(grid, $event)" headersVisibility="Column">
+  <wj-flex-grid-filter #filter></wj-flex-grid-filter>
+  <wj-flex-grid-column *ngFor="let col of colums.items" 
+          [header]="col.header" 
+          [binding]="col.binding"
+          [allowSorting]="col.allowSorting" 
+          [format]="col.format">
+    <!-- <ng-container *ngIf="col.customCell">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+        <ng-container *ngComponentOutlet="col.customCell; injector: createInjector(cell); "></ng-container>
+      </ng-template>
+    </ng-container> -->
+    <ng-container *ngIf="col.customCell">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+        <ng-container #spot></ng-container>
+      </ng-template>
+    </ng-container>
+  </wj-flex-grid-column>
+</wj-flex-grid>
+
+<ng-container *ngIf="pagination">
+  <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
+    [cv]="dataSource">
+  </wj-collection-view-navigator>
+</ng-container>
