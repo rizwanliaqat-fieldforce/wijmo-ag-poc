@@ -1,7 +1,7 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[ad-host]',
+  selector: '[ff-dynamic-view]',
 })
 export class DynamicViewDirective {
   constructor(public viewContainerRef: ViewContainerRef) { }
