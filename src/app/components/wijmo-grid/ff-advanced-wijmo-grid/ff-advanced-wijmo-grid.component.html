@@ -5,14 +5,9 @@
           [binding]="col.binding"
           [allowSorting]="col.allowSorting" 
           [format]="col.format">
-    <!-- <ng-container *ngIf="col.customCell">
-      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
-        <ng-container *ngComponentOutlet="col.customCell; injector: createInjector(cell); "></ng-container>
-      </ng-template>
-    </ng-container> -->
     <ng-container *ngIf="col.customCell">
       <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
-        <ng-container #spot></ng-container>
+        <ng-container *ngComponentOutlet="col.customCell; injector: createInjector(cell); "></ng-container>
       </ng-template>
     </ng-container>
   </wj-flex-grid-column>
