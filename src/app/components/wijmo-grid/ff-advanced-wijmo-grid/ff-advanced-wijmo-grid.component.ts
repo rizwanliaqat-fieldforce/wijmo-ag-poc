@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, Injector } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Injector, InjectionToken } from '@angular/core';
 
 import { CollectionView, EventArgs } from 'wijmo/wijmo';
 import { FlexGridFilter, FilterType } from 'wijmo/wijmo.grid.filter';

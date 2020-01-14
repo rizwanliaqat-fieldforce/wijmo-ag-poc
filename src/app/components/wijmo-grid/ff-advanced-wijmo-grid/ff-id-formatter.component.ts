@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Inject} from '@angular/core';
 import { DynamicData } from 'src/app/models/DynamicData';
 
 @Component({
@@ -9,7 +9,7 @@ import { DynamicData } from 'src/app/models/DynamicData';
 })
 export class FFIdFormatterComponent {
   
-  constructor(public params: DynamicData) {
+  constructor(@Inject(DynamicData) public params: any) {
     //console.log("FF Number Formatter Component", params);
   }
 
